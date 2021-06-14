@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 
+Parameters:
+  Env:
+    Description: Choose the environment to create
+    Type: String
+    Default: development
+    AllowedValues:
+    - development
+    - staging
+    - production
+  VpcId:
+    Description: VPC ID
+    Type: AWS::EC2::VPC::Id
+  VpcSubnetCidr:
+    Description: VPC subnet CIDR
+    Type: String
+    Default: 172.31.0.0/16
+  StaticIPforSSH:
+    Description: Static IP for SSH access
+    Type: String
+    Default: 127.0.0.1/32
+  VpcEc2Subnet1:
+    Description: EC2 subnet 1(AZ-a)
+    Type: AWS::EC2::Subnet::Id
+  VpcEc2Subnet2:
+    Description: EC2 subnet 2(AZ-c)
+    Type: AWS::EC2::Subnet::Id
+  Ec2ImageId:
+    Description: AMI ID
+    Type: String
+    Default: ami-2724cf58
+  Ec2InstanceType:
+    Description: EC2 InstanceType
+    Type: String
+    Default: t2.micro
+  Ec2InstanceKeyName:
+    Description: EC2 SSH KEY
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: SSHKey
+  Ec2InstanceTagName:
+    Description: EC2 Tag Name
+    Type: String
+    Default: test-lt-ec2-20180605
+  Ec2AutoscaleMinSize:
+    Description: AutoScalingGroup MinSize
+    Type: String
+    Default: '1'
+  Ec2AutoscaleMaxSize:
+    Description: AutoScalingGroup MaxSize
+    Type: String
+    Default: '1'
+  Ec2AutoscaleDesiredCapacity:
+    Description: AutoScalingGroup DesiredCapacity
+    Type: String
+    Default: '1'
