@@ -1,3 +1,6 @@
+# CloudFormationに対応したEC2の起動テンプレートを試してみた
+# https://dev.classmethod.jp/articles/cfn-launch-template-ec2/
+
 AWSTemplateFormatVersion: '2010-09-09'
 Description: ec2-LaunchTemplate-instance
 Parameters:
